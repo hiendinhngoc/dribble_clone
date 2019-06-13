@@ -26,13 +26,19 @@
                 <%= shot.impressionist_count %>
               <% end %>
             </div>
-            <div class="level-item comments data">
+            <%
+=begin%>
+ <div class="level-item comments data">
               <%= link_to shot do %>
                 <span class="icon"><i class="fa fa-comment"></i></span>
                  <%= shot.comments.count %>
               <% end %>
-            </div>
-            <div class="level-item likes">
+            </div> 
+<%
+=end%>
+            <%
+=begin%>
+ <div class="level-item likes">
               <% if user_signed_in? %>
                 
                 <% if current_user.liked? shot %>
@@ -53,7 +59,9 @@
                   <% end %>
               <% end %>
 
-            </div>
+            </div> 
+<%
+=end%>
           </div>
         </nav>
         </div>

@@ -32,7 +32,7 @@
 						<%= @shot.description %>
 					</div>
 
-					<section class="comments">
+          <section class="comments">
 						<h2 class="subtitle is-5"><%= pluralize(@shot.comments.count, 'Comment') %></h2>
 							<%= render @shot.comments %>
 						<hr />
@@ -44,11 +44,12 @@
 						<% else %>
 							<div class="content"><%= link_to 'Sign in', new_user_session_path %> to leave a comment.</div>
 						<% end %>
-					</section>
+					</section> 
 
 				</div>
 			</div>
-			<div class="column is-3 is-offset-1">
+			
+      <div class="column is-3 is-offset-1">
 				<div class="nav panel show-shot-analytics">
 					<div class="panel-block views data">
 						<span class="icon"><i class="fa fa-eye"></i></span>
@@ -79,7 +80,7 @@
             <% end %>
 					</div>
 				</div>
-			</div>
+			</div> 
 		</div>
 	</div>
 </div>
