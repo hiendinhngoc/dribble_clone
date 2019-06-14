@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def create
     @shot = Shot.find(params[:shot_id])
@@ -6,14 +8,14 @@ class CommentsController < ApplicationController
 
     @comment.save!
 
-  	redirect_to shot_path(@shot)
+    redirect_to shot_path(@shot)
   end
 
   def destroy
     @shot = Shot.find(params[:shot_id])
-  	@comment = @shot.comments.find(params[:id])
-  	@comment.destroy
-  	redirect_to shot_path(@shot)
+    @comment = @shot.comments.find(params[:id])
+    @comment.destroy
+    redirect_to shot_path(@shot)
   end
 
   private
@@ -21,5 +23,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:name, :response, :user_id)
   end
-
 end
